@@ -22,6 +22,8 @@ return new class extends Migration
             $table->text('detail_tiket');
             $table->string('status_tiket');
             $table->text('attachment')->nullable();
+            $table->integer('level_prioritas')->unsigned()->nullable();
+            $table->string('tipe_prioritas')->nullable();
             $table->integer('id_solusi')->unsigned()->nullable();
             $table->text('solusi_text')->nullable();
             $table->string('updated_by');
