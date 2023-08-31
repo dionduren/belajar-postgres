@@ -14,8 +14,8 @@ class Tiket extends Model
 
     protected $guarded = ['id'];
 
-    // public function user()
-    // {
-    //     return $this->hasOne(User::class, 'role_id', 'id');
-    // }
+    public function parent_tiket()
+    {
+        return $this->hasOne(Tiket::class, 'id_tiket_prev', 'id');
+    }
 }

@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\ItemCategory;
 use App\Models\Kategori;
 use App\Models\Subkategori;
 use Illuminate\Database\Seeder;
@@ -37,7 +38,10 @@ class DatabaseSeeder extends Seeder
         }
 
         $json1 = File::get("resources/json/subkategori.json");
+        $json2 = File::get("resources/json/item_kategori.json");
+
         $daftar_subkategori = json_decode($json1);
+        $daftar_item_kategori = json_decode($json2);
 
         foreach ($daftar_subkategori as $subkategori) {
             $id_kategori = Kategori::where("nama_kategori", $subkategori->kategori)->first();
@@ -46,7 +50,6 @@ class DatabaseSeeder extends Seeder
                 'id_kategori' => $id_kategori->id,
                 'nama_kategori' => $subkategori->kategori,
                 'nama_subkategori' => $subkategori->subkategori,
-                'punya_item_category' => $subkategori->item_kategori_exist,
                 'updated_by' => 'Seeder',
                 'created_by' => 'Seeder',
                 'created_at' => now(),
@@ -54,6 +57,25 @@ class DatabaseSeeder extends Seeder
             ];
 
             Subkategori::create($list_subkategori);
+        }
+
+        foreach ($daftar_item_kategori as $item_kategori) {
+            $id_kategori = Kategori::where("nama_kategori", $item_kategori->kategori)->first()->id;
+            $id_subkategori = Subkategori::where("nama_subkategori", $item_kategori->subkategori)->first()->id;
+
+            $list_subkategori = [
+                'id_kategori' => $id_kategori,
+                'nama_kategori' => $item_kategori->kategori,
+                'id_subkategori' => $id_subkategori,
+                'nama_subkategori' => $item_kategori->subkategori,
+                'nama_item_kategori' => $item_kategori->item_kategori,
+                'updated_by' => 'Seeder',
+                'created_by' => 'Seeder',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ];
+
+            ItemCategory::create($list_subkategori);
         }
     }
 }

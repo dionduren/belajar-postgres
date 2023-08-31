@@ -16,6 +16,6 @@ class ItemCategory extends Model
 
     public function subkategori()
     {
-        return $this->hasMany(Subkategori::class, 'id_subkategori', 'id');
+        return $this->hasOne(Subkategori::class, 'id_subkategori', 'id');
     }
 }

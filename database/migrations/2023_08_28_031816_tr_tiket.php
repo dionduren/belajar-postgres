@@ -14,16 +14,21 @@ return new class extends Migration
         Schema::create('tr_tiket', function (Blueprint $table) {
             $table->id();
             $table->integer('id_tiket_prev')->unsigned()->nullable();
+            $table->string('nomor_tiket')->nullable();
             $table->string('tipe_tiket');
+            $table->integer('id_kategori')->unsigned();
             $table->string('kategori_tiket');
+            $table->integer('id_subkategori')->unsigned();
             $table->string('subkategori_tiket');
+            $table->integer('id_item_kategori')->unsigned()->nullable();
             $table->string('item_kategori_tiket')->nullable();
             $table->string('judul_tiket');
             $table->text('detail_tiket');
             $table->string('status_tiket');
             $table->text('attachment')->nullable();
+            $table->integer('level_dampak')->unsigned()->nullable();
             $table->integer('level_prioritas')->unsigned()->nullable();
-            $table->string('tipe_prioritas')->nullable();
+            $table->string('tipe_matriks')->nullable();
             $table->integer('id_solusi')->unsigned()->nullable();
             $table->text('solusi_text')->nullable();
             $table->string('updated_by');

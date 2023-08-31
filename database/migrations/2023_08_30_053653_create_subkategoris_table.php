@@ -17,7 +17,7 @@ return new class extends Migration
             // $table->string('id_kategori');
             $table->string('nama_kategori');
             $table->string('nama_subkategori');
-            $table->boolean('punya_item_category')->default(false);
+            $table->string('tipe_tiket')->nullable();
             $table->integer('level_dampak')->nullable();
             $table->integer('level_urgensi')->nullable();
             $table->string('updated_by');

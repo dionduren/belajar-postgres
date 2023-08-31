@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('ms_item_kategori', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('id_kategori')->unsigned()->nullable();
+            $table->bigInteger('id_kategori')->unsigned();
             $table->string('nama_kategori');
-            $table->integer('id_subkategori')->unsigned()->nullable();
+            $table->bigInteger('id_subkategori')->unsigned();
             $table->string('nama_subkategori');
             $table->string('nama_item_kategori');
+            $table->string('tipe_tiket')->nullable();
             $table->integer('level_dampak')->nullable();
             $table->integer('level_urgensi')->nullable();
             $table->string('updated_by');

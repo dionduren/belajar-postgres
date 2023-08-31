@@ -1,314 +1,210 @@
 [
   {
-    "id_kategori": 1,
     "kategori": "Internet/Wifi",
-    "subkategori": "Permintaan akses internet/ wifi",
-    "item_kategori_exist": 0
+    "subkategori": "Permintaan akses internet/ wifi"
   },
   {
-    "id_kategori": 1,
     "kategori": "Internet/Wifi",
-    "subkategori": "Internet/ wifi tidak tersambung",
-    "item_kategori_exist": 0
+    "subkategori": "Internet/ wifi tidak tersambung"
   },
   {
-    "id_kategori": 1,
     "kategori": "Internet/Wifi",
-    "subkategori": "Internet/ wifi sambung putus",
-    "item_kategori_exist": 0
+    "subkategori": "Internet/ wifi sambung putus"
   },
   {
-    "id_kategori": 1,
     "kategori": "Internet/Wifi",
-    "subkategori": "Lainnya",
-    "item_kategori_exist": 0
+    "subkategori": "Lainnya"
   },
   {
-    "id_kategori": 2,
     "kategori": "VPN",
-    "subkategori": "Permintaan akses VPN",
-    "item_kategori_exist": 0
+    "subkategori": "Permintaan akses VPN"
   },
   {
-    "id_kategori": 2,
     "kategori": "VPN",
-    "subkategori": "VPN tidak tersambung",
-    "item_kategori_exist": 0
+    "subkategori": "VPN tidak tersambung"
   },
   {
-    "id_kategori": 2,
     "kategori": "VPN",
-    "subkategori": "Lainnya",
-    "item_kategori_exist": 0
+    "subkategori": "Lainnya"
   },
   {
-    "id_kategori": 3,
     "kategori": "File Sharing",
-    "subkategori": "Permintaan akses file sharing",
-    "item_kategori_exist": 0
+    "subkategori": "Permintaan akses file sharing"
   },
   {
-    "id_kategori": 3,
     "kategori": "File Sharing",
-    "subkategori": "Login gagal",
-    "item_kategori_exist": 0
+    "subkategori": "Login gagal"
   },
   {
-    "id_kategori": 3,
     "kategori": "File Sharing",
-    "subkategori": "Lainnya",
-    "item_kategori_exist": 0
+    "subkategori": "Lainnya"
   },
   {
-    "id_kategori": 4,
     "kategori": "Komputer/ Laptop",
-    "subkategori": "Instalasi aplikasi di komputer/ laptop",
-    "item_kategori_exist": 0
+    "subkategori": "Instalasi aplikasi di komputer/ laptop"
   },
   {
-    "id_kategori": 4,
     "kategori": "Komputer/ Laptop",
-    "subkategori": "Komputer/ laptop rusak atau tidak berfungsi",
-    "item_kategori_exist": 0
+    "subkategori": "Komputer/ laptop rusak atau tidak berfungsi"
   },
   {
-    "id_kategori": 4,
     "kategori": "Komputer/ Laptop",
-    "subkategori": "Lainnya",
-    "item_kategori_exist": 0
+    "subkategori": "Lainnya"
   },
   {
-    "id_kategori": 5,
     "kategori": "Printer",
-    "subkategori": "Instalasi driver printer ",
-    "item_kategori_exist": 0
+    "subkategori": "Instalasi driver printer "
   },
   {
-    "id_kategori": 5,
     "kategori": "Printer",
-    "subkategori": "Driver printer tidak tersambung",
-    "item_kategori_exist": 0
+    "subkategori": "Driver printer tidak tersambung"
   },
   {
-    "id_kategori": 5,
     "kategori": "Printer",
-    "subkategori": "Lainnya",
-    "item_kategori_exist": 0
+    "subkategori": "Lainnya"
   },
   {
-    "id_kategori": 6,
     "kategori": "Zoom",
-    "subkategori": "Permintaan layanan zoom temporary",
-    "item_kategori_exist": 0
+    "subkategori": "Permintaan layanan zoom temporary"
   },
   {
-    "id_kategori": 6,
     "kategori": "Zoom",
-    "subkategori": "Aplikasi zoom mengalami kendala",
-    "item_kategori_exist": 0
+    "subkategori": "Aplikasi zoom mengalami kendala"
   },
   {
-    "id_kategori": 6,
     "kategori": "Zoom",
-    "subkategori": "Lainnya",
-    "item_kategori_exist": 0
+    "subkategori": "Lainnya"
   },
   {
-    "id_kategori": 7,
     "kategori": "Email",
-    "subkategori": "Permintaan user email ",
-    "item_kategori_exist": 0
+    "subkategori": "Permintaan user email "
   },
   {
-    "id_kategori": 7,
     "kategori": "Email",
-    "subkategori": "Login gagal",
-    "item_kategori_exist": 0
+    "subkategori": "Login gagal"
   },
   {
-    "id_kategori": 7,
     "kategori": "Email",
-    "subkategori": "Lainnya",
-    "item_kategori_exist": 0
+    "subkategori": "Lainnya"
   },
   {
-    "id_kategori": 8,
     "kategori": "Aplikasi ERP SAP",
-    "subkategori": "Modul BPC",
-    "item_kategori_exist": 1
+    "subkategori": "Modul BPC"
   },
   {
-    "id_kategori": 8,
     "kategori": "Aplikasi ERP SAP",
-    "subkategori": "Modul CS",
-    "item_kategori_exist": 1
+    "subkategori": "Modul CS"
   },
   {
-    "id_kategori": 8,
     "kategori": "Aplikasi ERP SAP",
-    "subkategori": "Modul FICO",
-    "item_kategori_exist": 1
+    "subkategori": "Modul FICO"
   },
   {
-    "id_kategori": 8,
     "kategori": "Aplikasi ERP SAP",
-    "subkategori": "Modul FM",
-    "item_kategori_exist": 1
+    "subkategori": "Modul FM"
   },
   {
-    "id_kategori": 8,
     "kategori": "Aplikasi ERP SAP",
-    "subkategori": "Modul HCM",
-    "item_kategori_exist": 1
+    "subkategori": "Modul HCM"
   },
   {
-    "id_kategori": 8,
     "kategori": "Aplikasi ERP SAP",
-    "subkategori": "Modul MM",
-    "item_kategori_exist": 1
+    "subkategori": "Modul MM"
   },
   {
-    "id_kategori": 8,
     "kategori": "Aplikasi ERP SAP",
-    "subkategori": "Modul PM & PS",
-    "item_kategori_exist": 1
+    "subkategori": "Modul PM & PS"
   },
   {
-    "id_kategori": 8,
     "kategori": "Aplikasi ERP SAP",
-    "subkategori": "Modul PP & QM",
-    "item_kategori_exist": 1
+    "subkategori": "Modul PP & QM"
   },
   {
-    "id_kategori": 8,
     "kategori": "Aplikasi ERP SAP",
-    "subkategori": "Modul SD",
-    "item_kategori_exist": 1
+    "subkategori": "Modul SD"
   },
   {
-    "id_kategori": 8,
     "kategori": "Aplikasi ERP SAP",
-    "subkategori": "Modul WM",
-    "item_kategori_exist": 1
+    "subkategori": "Modul WM"
   },
   {
-    "id_kategori": 9,
     "kategori": "Aplikasi Non ERP",
-    "subkategori": "HC Services (ESS)",
-    "item_kategori_exist": 1
+    "subkategori": "HC Services (ESS)"
   },
   {
-    "id_kategori": 9,
     "kategori": "Aplikasi Non ERP",
-    "subkategori": "Aplikasi Gudang (APG)",
-    "item_kategori_exist": 0
+    "subkategori": "Aplikasi Gudang (APG)"
   },
   {
-    "id_kategori": 9,
     "kategori": "Aplikasi Non ERP",
-    "subkategori": "Eprocurement",
-    "item_kategori_exist": 0
+    "subkategori": "Eprocurement"
   },
   {
-    "id_kategori": 9,
     "kategori": "Aplikasi Non ERP",
-    "subkategori": "Web Commerce (WCM)",
-    "item_kategori_exist": 0
+    "subkategori": "Web Commerce (WCM)"
   },
   {
-    "id_kategori": 9,
     "kategori": "Aplikasi Non ERP",
-    "subkategori": "Web Uang Muka (WUM)",
-    "item_kategori_exist": 1
+    "subkategori": "Web Uang Muka (WUM)"
   },
   {
-    "id_kategori": 9,
     "kategori": "Aplikasi Non ERP",
-    "subkategori": "Cares",
-    "item_kategori_exist": 0
+    "subkategori": "Cares"
   },
   {
-    "id_kategori": 9,
     "kategori": "Aplikasi Non ERP",
-    "subkategori": "Digital Office (DOF)",
-    "item_kategori_exist": 0
+    "subkategori": "Digital Office (DOF)"
   },
   {
-    "id_kategori": 9,
     "kategori": "Aplikasi Non ERP",
-    "subkategori": "DPCS",
-    "item_kategori_exist": 0
+    "subkategori": "DPCS"
   },
   {
-    "id_kategori": 9,
     "kategori": "Aplikasi Non ERP",
-    "subkategori": "Iproms",
-    "item_kategori_exist": 0
+    "subkategori": "Iproms"
   },
   {
-    "id_kategori": 9,
     "kategori": "Aplikasi Non ERP",
-    "subkategori": "Master Material & Cataloguing",
-    "item_kategori_exist": 0
+    "subkategori": "Master Material & Cataloguing"
   },
   {
-    "id_kategori": 9,
     "kategori": "Aplikasi Non ERP",
-    "subkategori": "Pakta Integritas Online (PIONIR)",
-    "item_kategori_exist": 0
+    "subkategori": "Pakta Integritas Online (PIONIR)"
   },
   {
-    "id_kategori": 9,
     "kategori": "Aplikasi Non ERP",
-    "subkategori": "PI Smart",
-    "item_kategori_exist": 0
+    "subkategori": "PI Smart"
   },
   {
-    "id_kategori": 9,
     "kategori": "Aplikasi Non ERP",
-    "subkategori": "PI Sign",
-    "item_kategori_exist": 0
+    "subkategori": "PI Sign"
   },
   {
-    "id_kategori": 9,
     "kategori": "Aplikasi Non ERP",
-    "subkategori": "Prisma",
-    "item_kategori_exist": 0
+    "subkategori": "Prisma"
   },
   {
-    "id_kategori": 9,
     "kategori": "Aplikasi Non ERP",
-    "subkategori": "REKAN",
-    "item_kategori_exist": 0
+    "subkategori": "REKAN"
   },
   {
-    "id_kategori": 9,
     "kategori": "Aplikasi Non ERP",
-    "subkategori": "SIAP GGC",
-    "item_kategori_exist": 0
+    "subkategori": "SIAP GGC"
   },
   {
-    "id_kategori": 9,
     "kategori": "Aplikasi Non ERP",
-    "subkategori": "WBS",
-    "item_kategori_exist": 0
+    "subkategori": "WBS"
   },
   {
-    "id_kategori": 9,
     "kategori": "Aplikasi Non ERP",
-    "subkategori": "Viral",
-    "item_kategori_exist": 0
+    "subkategori": "Viral"
   },
   {
-    "id_kategori": 9,
     "kategori": "Aplikasi Non ERP",
-    "subkategori": "Lainnya",
-    "item_kategori_exist": 0
+    "subkategori": "Lainnya"
   },
   {
-    "id_kategori": 10,
     "kategori": "Lainnya",
-    "subkategori": "Lainnya",
-    "item_kategori_exist": 0
+    "subkategori": "Lainnya"
   }
 ]

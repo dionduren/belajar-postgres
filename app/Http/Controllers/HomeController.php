@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Tiket;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,10 @@ class HomeController extends Controller
 
     public function home_user()
     {
-        return view('home.user');
+        $daftar_tiket = Tiket::all();
+        return view('home.user', [
+            'daftar_tiket' => $daftar_tiket,
+        ]);
     }
 
 
