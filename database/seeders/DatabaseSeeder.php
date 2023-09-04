@@ -4,12 +4,17 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-use App\Models\ItemCategory;
+use App\Models\GrupMember;
+use File;
+use App\Models\User;
 use App\Models\Kategori;
 use App\Models\Subkategori;
-use Illuminate\Database\Seeder;
+use App\Models\ItemCategory;
 
-use File;
+use App\Models\GrupTechnical;
+use App\Models\KnowledgeManagement;
+use App\Models\Role;
+use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -39,9 +44,11 @@ class DatabaseSeeder extends Seeder
 
         $json1 = File::get("resources/json/subkategori.json");
         $json2 = File::get("resources/json/item_kategori.json");
+        $json3 = File::get("resources/json/user_role.json");
 
         $daftar_subkategori = json_decode($json1);
         $daftar_item_kategori = json_decode($json2);
+        $daftar_user_role = json_decode($json3);
 
         foreach ($daftar_subkategori as $subkategori) {
             $id_kategori = Kategori::where("nama_kategori", $subkategori->kategori)->first();
@@ -77,5 +84,114 @@ class DatabaseSeeder extends Seeder
 
             ItemCategory::create($list_subkategori);
         }
+
+        foreach ($daftar_user_role as $user_role) {
+
+            $list_user_role = [
+                'kode_role' => $user_role->kode_role,
+                'nama_role' => $user_role->nama_role,
+                'deskripsi_role' => $user_role->deskripsi_role,
+                'updated_by' => 'Seeder',
+                'created_by' => 'Seeder',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ];
+
+            Role::create($list_user_role);
+        }
+
+        GrupTechnical::create([
+            'nama_group' => 'Infrastruktur & Layanan TI',
+            'nik_team_lead' => 121003,
+            'nama_team_lead' => 'Richard Martinus Halim',
+            'updated_by' => 'Seeder',
+            'created_by' => 'Seeder',
+        ]);
+
+        User::create([
+            'nik' => 1180041,
+            'nama' => 'Dion Alamsah',
+            'password' => bcrypt('123456'),
+            'email' => 'dion.alamsah@pupuk-indonesia.com',
+            'email_verified_at' => now(),
+            'unit_kerja' => 'Operasional TI',
+            'role_id' => '1',
+            'updated_by' => 'Seeder',
+            'created_by' => 'Seeder',
+        ]);
+
+        User::create([
+            'nik' => 'helpdesk.pi',
+            'nama' => 'Helpdesk',
+            'password' => bcrypt('123456'),
+            'email' => 'cares@pupuk-indonesia.com',
+            'email_verified_at' => now(),
+            'unit_kerja' => 'Rendal TI',
+            'role_id' => '2',
+            'updated_by' => 'Seeder',
+            'created_by' => 'Seeder',
+        ]);
+
+        User::create([
+            'nik' => 121003,
+            'nama' => 'Richard Martinus Halim',
+            'password' => bcrypt('123456'),
+            'email' => 'richard.martinus@pupuk-indonesia.com',
+            'unit_kerja' => 'Infrastruktur & Layanan TI',
+            'email_verified_at' => now(),
+            'role_id' => '4',
+            'updated_by' => 'Seeder',
+            'created_by' => 'Seeder',
+        ]);
+
+        User::create([
+            'nik' => 121004,
+            'nama' => 'Teknisi Network',
+            'password' => bcrypt('123456'),
+            'email' => 'network@pupuk-indonesia.com',
+            'email_verified_at' => now(),
+            'unit_kerja' => 'Infrastruktur & Layanan TI',
+            'role_id' => '5',
+            'updated_by' => 'Seeder',
+            'created_by' => 'Seeder',
+        ]);
+
+        GrupMember::create([
+            'id_group' => 1,
+            'nama_group' => 'Infrastruktur & Layanan TI',
+            'nik_member' => 121003,
+            'nama_member' => 'Richard Martinus Halim',
+            'role_member' => 'Team Leader',
+            'updated_by' => 'Seeder',
+            'created_by' => 'Seeder',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        GrupMember::create([
+            'id_group' => 1,
+            'nama_group' => 'Infrastruktur & Layanan TI',
+            'nik_member' => 121004,
+            'nama_member' => 'Teknisi Network',
+            'role_member' => 'Member',
+            'updated_by' => 'Seeder',
+            'created_by' => 'Seeder',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        KnowledgeManagement::create([
+            'tipe_tiket' => 'REQUEST',
+            'id_kategori' => 1,
+            'kategori_tiket' => 'Internet/Wifi',
+            'id_subkategori' => 17,
+            'subkategori_tiket' => 'Permintaan akses internet/ wifi',
+            'judul_solusi' => 'Pendaftaran Wifi Perangkat',
+            'detail_solusi' => 'Mendaftarkan daftar user wifi sesuai konfigurasi dari perangkat user',
+            'updated_by' => 'Seeder',
+            'created_by' => 'Seeder',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
     }
 }

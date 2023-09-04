@@ -29,8 +29,11 @@ return new class extends Migration
             $table->integer('level_dampak')->unsigned()->nullable();
             $table->integer('level_prioritas')->unsigned()->nullable();
             $table->string('tipe_matriks')->nullable();
+            $table->integer('id_group')->unsigned()->nullable();
+            $table->string('assigned_group')->nullable();
+            $table->string('id_technical')->nullable();
+            $table->string('assigned_technical')->nullable();
             $table->integer('id_solusi')->unsigned()->nullable();
-            $table->text('solusi_text')->nullable();
             $table->string('updated_by');
             $table->string('created_by');
             $table->timestamps();

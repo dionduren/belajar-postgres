@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\APIGroup;
+use App\Http\Controllers\APITiketCreate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\APITiketCreate;
+use App\Http\Controllers\APITiket;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,4 +26,25 @@ Route::get('/kategori-list', [APITiketCreate::class, 'list_kategori']);
 Route::get('/subkategori-list/{id}', [APITiketCreate::class, 'list_subkategori']);
 Route::get('/item-kategori-list/{id}', [APITiketCreate::class, 'list_item_kategori']);
 
-Route::post('/submit-ticket', [APITiketCreate::class, 'store']);
+Route::post('/submit-tiket', [APITiketCreate::class, 'store']);
+
+Route::get('/helpdesk-tiket-submitted', [APITiket::class, 'helpdesk_list_submitted']);
+Route::get('/helpdesk-tiket-assigned', [APITiket::class, 'helpdesk_list_assigned']);
+Route::get('/helpdesk-tiket-detail/{id}', [APITiket::class, 'helpdesk_detail']);
+Route::get('/technical-group-list', [APIGroup::class, 'technical_group_list']);
+Route::post('/tiket-assign-group', [APIGroup::class, 'tiket_assign_group']);
+
+Route::get('/teamlead-tiket-waiting-list/{id}', [APITiket::class, 'teamlead_waiting_list']);
+Route::get('/teamlead-tiket-ongoing-list/{id}', [APITiket::class, 'teamlead_ongoing_list']);
+Route::get('/teamlead-tiket-finished/{id}', [APITiket::class, 'teamlead_finished']);
+Route::get('/teamlead-tiket-detail/{id}', [APITiket::class, 'teamlead_detail']);
+Route::get('/technical-list/{id}', [APIGroup::class, 'technical_list']);
+Route::post('/tiket-assign-technical', [APIGroup::class, 'tiket_assign_technical']);
+
+Route::get('/technical-tiket-ongoing-list/{id}', [APITiket::class, 'technical_ongoing_list']);
+Route::get('/technical-tiket-finished-list/{id}', [APITiket::class, 'technical_finished']);
+Route::get('/solution-list/{id}', [APITiket::class, 'solution_list']);
+Route::post('/submit-solution', [APITiket::class, 'submit_solution']);
+Route::post('/submit-new-solution', [APITiket::class, 'submit_new_solution']);
+
+Route::post('/close-tiket', [APITiket::class, 'close_tiket']);

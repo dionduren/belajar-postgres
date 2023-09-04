@@ -13,7 +13,7 @@
 @section('content')
     <div class="row py-5">
         <div class="col-11 border border-1 border-dark mx-auto">
-            <form id="create-ticket-form">
+            <form id="create-tiket-form">
 
                 <div class="row mb-3">
                     <label for="kategori_tiket">Kategori Tiket</label>
@@ -81,13 +81,15 @@
                 success: function(data) {
                     //
                     $('#kategori_tiket').empty();
+                    $('#kategori_tiket').append('<option value="">Pilih Kategori</option>');
+                    $('#subkategori_tiket').append('<option value="">Pilih Sub Kategori</option>');
 
                     $.each(data, function(key, value) {
                         $('#kategori_tiket').append('<option value="' + value.id + '">' + value
                             .nama_kategori + '</option>');
                     });
 
-                    get_subcat(1);
+                    // get_subcat(1);
                 }
             })
 
@@ -103,7 +105,7 @@
                 get_itemcat(id_subkategori);
             })
 
-            $('#create-ticket-form').submit(function(event) {
+            $('#create-tiket-form').submit(function(event) {
                 event.preventDefault(); // Prevent default form submit action
 
                 let formData = $(this).serialize(); // Serialize form data
@@ -123,7 +125,7 @@
                 // alert(formData);
 
                 $.ajax({
-                    url: "/api/submit-ticket",
+                    url: "/api/submit-tiket",
                     method: "POST",
                     dataType: "json",
                     data: formData,

@@ -12,9 +12,9 @@
             <div class="mx-auto mb-5">
                 <a href="/user" class="btn btn-lg btn-block btn-primary"> Masuk - User</a>
             </div>
-            <div class="mx-auto">
+            {{-- <div class="mx-auto">
                 <a href="/vp-user" class="btn btn-lg btn-block btn-secondary"> Masuk - VP User</a>
-            </div>
+            </div> --}}
         </div>
 
         <div class="col-4 text-center py-5 border border-1 border-dark">
@@ -25,10 +25,15 @@
 
         <div class="col-4 text-center py-5 border border-1 border-dark">
             <div class="mx-auto mb-5">
-                <a href="/team-lead" class="btn btn-lg btn-block btn-warning"> Masuk - Team Lead</a>
+                <a href="/teamlead/121003" class="btn btn-lg btn-block btn-warning"> Masuk - Team Lead</a>
             </div>
-            <div class="mx-autoo">
-                <a href="/technical" class="btn btn-lg btn-block btn-warning"> Masuk - Teknisi/Engineer</a>
+            <div class="mx-auto mb-5">
+                <a href="/technical/121003" class="btn btn-lg btn-block btn-warning"> Masuk - Teknisi/Engineer - Assigned
+                    Pak Richard</a>
+            </div>
+            <div class="mx-auto">
+                <a href="/technical/121004" class="btn btn-lg btn-block btn-warning"> Masuk - Teknisi/Engineer -
+                    Teknisi Network</a>
             </div>
         </div>
 

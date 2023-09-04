@@ -111,7 +111,7 @@ class APITiketCreate extends Controller
 
             return response()->json([
                 'success' => true,
-                'data' => $db_raw_data,
+                // 'data' => $db_raw_data,
             ], 201);
         } catch (\Exception $e) {
             // Catch any error during the storing process
