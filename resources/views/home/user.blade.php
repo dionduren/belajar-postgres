@@ -7,21 +7,23 @@
 @section('content')
     <div class="row py-5">
 
-        <div class="col-11 border border-1 border-dark mx-auto"
-            style="background-image: linear-gradient(to right, #2D4F9F, #3281BC);">
+        <div class="col-11 border border-1 border-dark mx-auto" {{-- style="background-image: linear-gradient(to right, #2D4F9F, #3281BC);"> --}} style="background-color: #C7E2FC;">
 
             <div class="row">
                 <div class="col-2">
                     <div class="pt-3">
-                        <a href="/" class="btn btn-lg btn-primary">Home</a>
+                        <a href="/" class="btn btn-lg border border-light"
+                            style="background-color:#2D50A0;color:white">Home</a>
                     </div>
                 </div>
-                <div class="col-8 pt-4 text-center text-light">
+                <div class="col-8 pt-4 text-center">
                     <h2>User</h2>
                 </div>
                 <div class="text-center my-5">
-                    <h2 class="text-light">Buat Tiket Insiden/Request</h2>
-                    <a href="/create-tiket" class="btn btn-lg btn-primary">Create Ticket</a>
+                    <h2>Buat Tiket Insiden/Request</h2>
+                    <a href="/create-tiket" class="btn btn-lg fw-bold"
+                        style="width:80%; background-color:#FFBA10;color:black">Create
+                        Ticket</a>
                 </div>
             </div>
 
@@ -42,14 +44,15 @@
                                 <th class="text-center">Item kategori</th>
                                 <th class="text-center">Judul</th>
                                 <th class="text-center">Status Tiket</th>
+                                <th class="text-center">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($daftar_tiket as $tiket)
                                 <tr>
                                     <td>TO BE DETERMINED</td>
-                                    <td>{{ $tiket->tipe_tiket }}</td>
-                                    <td>{{ $tiket->kategori_tiket }}</td>
+                                    <td class="text-center">{{ $tiket->tipe_tiket }}</td>
+                                    <td class="text-center">{{ $tiket->kategori_tiket }}</td>
                                     <td>{{ $tiket->subkategori_tiket }}</td>
                                     <td>
                                         @if ($tiket->item_kategori_tiket != null)
@@ -76,6 +79,21 @@
                                     @endif --}}
                                     <td class="text-center">
                                         {{ $tiket->status_tiket }}
+                                    </td>
+                                    <td>
+                                        @if ($tiket->status_tiket == 'Finished')
+                                            <div class="btn-group text-center">
+                                                <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown"
+                                                    aria-expanded="false" style="background-color:#2D50A0;color:white">
+                                                    Action
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="dropdown-item" href="#">Detail</a></li>
+                                                    <li><a class="dropdown-item" href="#">Tutup Tiket</a></li>
+                                                    <li><a class="dropdown-item" href="#">Revisi Solusi</a></li>
+                                                </ul>
+                                            </div>
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach
