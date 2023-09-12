@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('tr_tiket', function (Blueprint $table) {
             $table->id();
+            $table->string('user_id_creator')->nullable();
             $table->integer('id_tiket_prev')->unsigned()->nullable();
             $table->string('nomor_tiket')->nullable();
             $table->string('tipe_tiket');
