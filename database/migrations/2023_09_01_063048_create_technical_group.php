@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('ms_technical_group', function (Blueprint $table) {
             $table->id();
             $table->string('nama_group');
-            $table->bigInteger('nik_team_lead')->unsigned()->nullable();
+            $table->string('nik_team_lead')->nullable();
             $table->string('nama_team_lead')->nullable();
             $table->string('updated_by');
             $table->string('created_by');

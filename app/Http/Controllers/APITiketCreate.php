@@ -65,7 +65,7 @@ class APITiketCreate extends Controller
         }
 
         try {
-
+            $user_id_creator = 1;
             $id_kategori = $request->input('kategori_tiket');
             $nama_kategori = $request->input('nama_kategori');
             $id_subkategori = $request->input('subkategori_tiket');
@@ -88,6 +88,7 @@ class APITiketCreate extends Controller
             }
 
             $db_raw_data = [
+                'user_id_creator' => $user_id_creator,
                 'tipe_tiket' => $tipe_tiket,
                 'id_kategori' => $id_kategori,
                 'kategori_tiket' => $nama_kategori,
@@ -99,6 +100,105 @@ class APITiketCreate extends Controller
                 'detail_tiket' => $detail_tiket,
                 'status_tiket' => "Submitted",
                 'attachment' => null,
+                'level_dampak' => $level_dampak,
+                'level_prioritas' => $level_prioritas,
+                'tingkat_matriks' => $tingkat_matriks,
+                'tipe_matriks' => $tipe_matriks,
+                'updated_by' => 'User Test',
+                'created_by' => 'User Test',
+            ];
+
+            Tiket::create($db_raw_data);
+
+            return response()->json([
+                'success' => true,
+                // 'data' => $db_raw_data,
+            ], 201);
+        } catch (\Exception $e) {
+            // Catch any error during the storing process
+            return response()->json([
+                'success' => false,
+                'reason' => 'Server error',
+                'message' => $e->getMessage()
+            ], 500);
+        }
+    }
+
+    public function store_mobile(Request $request)
+    {
+        // Random antara Incident dan Request
+        $randomNumber = rand(1, 2);
+        $randomValue = $randomNumber === 1 ? "Incident" : "Request";
+        $tipe_tiket = strtoupper($randomValue);
+
+        // Define the validation rules
+        $rules = [
+            'kategori_tiket' => 'required',
+            'subkategori_tiket' => 'required',
+            'item_kategori_tiket' => 'sometimes|required', // only validate when present
+            'judul_tiket' => 'required',
+            'detail_tiket' => 'required',
+            // 'attachment' => 'sometimes|required', // only validate when present
+        ];
+
+        // Perform validation
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+            // Validation fails
+
+            // Identify empty fields
+            $emptyFields = [];
+            foreach ($rules as $field => $rule) {
+                if (empty($request[$field])) {
+                    $emptyFields[] = $field;
+                }
+            }
+
+            return response()->json([
+                'success' => false,
+                'reason' => 'Ada kolom kosong',
+                'empty_fields' => $emptyFields,
+                'errors' => $validator->errors()
+            ], 422);
+        }
+
+        try {
+            $user_id_creator = 1;
+            $id_kategori = $request->input('kategori_tiket');
+            $nama_kategori = Kategori::where('id', $request->input('kategori_tiket'))->first()->nama_kategori;
+            $id_subkategori = $request->input('subkategori_tiket');
+            $nama_subkategori = Subkategori::where('id', $request->input('subkategori_tiket'))->first()->nama_subkategori;
+            // $id_item_kategori = $request->input('item_kategori_tiket');
+            // $nama_item_kategori = $request->input('nama_item_kategori');
+            $judul_tiket = $request->input('judul_tiket');
+            $detail_tiket = $request->input('detail_tiket');
+
+            //randomized matriks prioritas insiden
+            $level_dampak = rand(1, 3);
+            $level_prioritas = rand(1, 3);
+            $tingkat_matriks = (int)$level_dampak * (int)$level_prioritas;
+            if ($tingkat_matriks < 5) {
+                $tipe_matriks = 'LOW';
+            } else if ($tingkat_matriks < 8) {
+                $tipe_matriks = 'MEDIUM';
+            } else {
+                $tipe_matriks = 'HIGH';
+            }
+
+            $db_raw_data = [
+                'user_id_creator' => $user_id_creator,
+                'tipe_tiket' => $tipe_tiket,
+                'id_kategori' => $id_kategori,
+                'kategori_tiket' => $nama_kategori,
+                'id_subkategori' => $id_subkategori,
+                'subkategori_tiket' => $nama_subkategori,
+                // 'id_item_kategori' => $id_item_kategori,
+                // 'item_kategori_tiket' => $nama_item_kategori,
+                'judul_tiket' => $judul_tiket,
+                'detail_tiket' => $detail_tiket,
+                'status_tiket' => "Submitted",
+                // 'attachment' => null,
                 'level_dampak' => $level_dampak,
                 'level_prioritas' => $level_prioritas,
                 'tingkat_matriks' => $tingkat_matriks,

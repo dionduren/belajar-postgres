@@ -27,6 +27,7 @@ Route::get('/subkategori-list/{id}', [APITiketCreate::class, 'list_subkategori']
 Route::get('/item-kategori-list/{id}', [APITiketCreate::class, 'list_item_kategori']);
 
 Route::post('/submit-tiket', [APITiketCreate::class, 'store']);
+Route::post('/submit-tiket-mobile', [APITiketCreate::class, 'store_mobile']);
 
 Route::get('/helpdesk-tiket-submitted', [APITiket::class, 'helpdesk_list_submitted']);
 Route::get('/helpdesk-tiket-assigned', [APITiket::class, 'helpdesk_list_assigned']);
