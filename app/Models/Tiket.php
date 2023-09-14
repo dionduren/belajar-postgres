@@ -18,4 +18,8 @@ class Tiket extends Model
     {
         return $this->hasOne(Tiket::class, 'id_tiket_prev', 'id');
     }
+    public function user()
+    {
+        return $this->hasOne(User::class, 'user_id_creator', 'id');
+    }
 }

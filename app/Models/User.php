@@ -11,7 +11,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, HasApiTokens;
 
 
     protected $table = 'users';
@@ -24,6 +24,11 @@ class User extends Authenticatable
         return $this->hasOne(Role::class, 'role_id', 'id');
     }
 
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
 
     /**
      * The attributes that should be cast.
@@ -32,6 +37,11 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'password' => 'hashed',
+        // 'password' => 'hashed',
     ];
+
+    public function tiket()
+    {
+        return $this->hasMany(Tiket::class, 'id', 'user_id_creator');
+    }
 }

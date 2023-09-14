@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\APIAuth;
 use App\Http\Controllers\APIGroup;
 use App\Http\Controllers\APITiketCreate;
 use Illuminate\Http\Request;
@@ -18,9 +19,13 @@ use App\Http\Controllers\APITiket;
 |
 */
 
+Route::post('/login', [APIAuth::class, 'login']);
+// Route::post('/login', [APIAuth::class, '__invoke']);
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
 
 Route::get('/kategori-list', [APITiketCreate::class, 'list_kategori']);
 Route::get('/subkategori-list/{id}', [APITiketCreate::class, 'list_subkategori']);
