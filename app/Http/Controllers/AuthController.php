@@ -49,10 +49,12 @@ class AuthController extends Controller
     {
         if (Auth::attempt(['nik' => $request->nik, 'password' => $request->password])) {
             $user = Auth::user();
-            $success['token'] =  $user->createToken('MyApp')->plainTextToken;
+            $success['id'] =  $user->id;
+            $success['nik'] =  $user->nik;
             $success['nama'] =  $user->nama;
             $success['email'] =  $user->email;
             $success['unit_kerja'] =  $user->unit_kerja;
+            $success['token'] =  $user->createToken('MyApp')->plainTextToken;
 
             return $this->sendResponse($success, 'User login successfully.');
         } else {
