@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('email')->nullable();
             // $table->timestamp('email_verified_at')->nullable();
             $table->integer('role_id')->unsigned();
+            $table->string('atasan_id')->nullable();
             $table->rememberToken();
             $table->string('updated_by');
             $table->string('created_by');

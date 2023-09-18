@@ -100,14 +100,6 @@ class DatabaseSeeder extends Seeder
             Role::create($list_user_role);
         }
 
-        GrupTechnical::create([
-            'nama_group' => 'Infrastruktur & Layanan TI',
-            'nik_team_lead' => 121003,
-            'nama_team_lead' => 'Richard Martinus Halim',
-            'updated_by' => 'Seeder',
-            'created_by' => 'Seeder',
-        ]);
-
         User::create([
             'nik' => 1180041,
             'nama' => 'Dion Alamsah',
@@ -132,6 +124,7 @@ class DatabaseSeeder extends Seeder
             'created_by' => 'Seeder',
         ]);
 
+
         User::create([
             'nik' => 121003,
             'nama' => 'Richard Martinus Halim',
@@ -145,13 +138,21 @@ class DatabaseSeeder extends Seeder
         ]);
 
         User::create([
-            'nik' => 121004,
+            'nik' => 'teknisi.network',
             'nama' => 'Teknisi Network',
             'password' => bcrypt('123456'),
             'email' => 'network@pupuk-indonesia.com',
             // 'email_verified_at' => now(),
             'unit_kerja' => 'Infrastruktur & Layanan TI',
             'role_id' => '5',
+            'updated_by' => 'Seeder',
+            'created_by' => 'Seeder',
+        ]);
+
+        GrupTechnical::create([
+            'nama_group' => 'Infrastruktur & Layanan TI',
+            'nik_team_lead' => 121003,
+            'nama_team_lead' => 'Richard Martinus Halim',
             'updated_by' => 'Seeder',
             'created_by' => 'Seeder',
         ]);
@@ -180,6 +181,63 @@ class DatabaseSeeder extends Seeder
             'updated_at' => now(),
         ]);
 
+
+
+        User::create([
+            'nik' => 'leader.test',
+            'nama' => 'Leader Test',
+            'password' => bcrypt('123456'),
+            'email' => 'leader.test@pupuk-indonesia.com',
+            'unit_kerja' => 'Infrastruktur & Layanan TI',
+            'role_id' => '4',
+            'updated_by' => 'Seeder',
+            'created_by' => 'Seeder',
+        ]);
+
+        User::create([
+            'nik' => 'teknisi.test',
+            'nama' => 'Teknisi Test',
+            'password' => bcrypt('123456'),
+            'email' => 'teknisi.test@pupuk-indonesia.com',
+            'unit_kerja' => 'Kompartemen TI',
+            'role_id' => '5',
+            'updated_by' => 'Seeder',
+            'created_by' => 'Seeder',
+        ]);
+
+
+        GrupTechnical::create([
+            'nama_group' => 'Grup Technical Test',
+            'nik_team_lead' => 'leader.test',
+            'nama_team_lead' => 'Leader Test',
+            'updated_by' => 'Seeder',
+            'created_by' => 'Seeder',
+        ]);
+
+        GrupMember::create([
+            'id_group' => 2,
+            'nama_group' => 'Grup Technical Test',
+            'nik_member' => 'leader.test',
+            'nama_member' => 'Leader Test',
+            'role_member' => 'Team Leader',
+            'updated_by' => 'Seeder',
+            'created_by' => 'Seeder',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        GrupMember::create([
+            'id_group' => 2,
+            'nama_group' => 'Grup Technical Test',
+            'nik_member' => 'teknisi.test',
+            'nama_member' => 'Teknisi Test',
+            'role_member' => 'Member',
+            'updated_by' => 'Seeder',
+            'created_by' => 'Seeder',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
         KnowledgeManagement::create([
             'tipe_tiket' => 'REQUEST',
             'id_kategori' => 1,
@@ -192,6 +250,31 @@ class DatabaseSeeder extends Seeder
             'created_by' => 'Seeder',
             'created_at' => now(),
             'updated_at' => now(),
+        ]);
+
+        User::create([
+            'nik' => 'user.test',
+            'nama' => 'User Test',
+            'password' => bcrypt('123456'),
+            'email' => 'user.test@pupuk-indonesia.com',
+            // 'email_verified_at' => now(),
+            'unit_kerja' => 'Departemen Test',
+            'role_id' => '6',
+            'atasan_id' => 'vp.test',
+            'updated_by' => 'Seeder',
+            'created_by' => 'Seeder',
+        ]);
+
+        User::create([
+            'nik' => 'vp.test',
+            'nama' => 'VP Test',
+            'password' => bcrypt('123456'),
+            'email' => 'vp.test@pupuk-indonesia.com',
+            // 'email_verified_at' => now(),
+            'unit_kerja' => 'Departemen Test',
+            'role_id' => '7',
+            'updated_by' => 'Seeder',
+            'created_by' => 'Seeder',
         ]);
     }
 }

@@ -53,6 +53,7 @@ class AuthController extends Controller
             $success['nik'] =  $user->nik;
             $success['nama'] =  $user->nama;
             $success['email'] =  $user->email;
+            $success['role_id'] =  $user->role_id;
             $success['unit_kerja'] =  $user->unit_kerja;
             $success['token'] =  $user->createToken('MyApp')->plainTextToken;
 
