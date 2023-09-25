@@ -57,6 +57,9 @@ class DatabaseSeeder extends Seeder
                 'id_kategori' => $id_kategori->id,
                 'nama_kategori' => $subkategori->kategori,
                 'nama_subkategori' => $subkategori->subkategori,
+                'level_dampak' => $subkategori->level_dampak,
+                'level_urgensi' => $subkategori->level_urgensi,
+                'tipe_tiket' => $subkategori->tipe_tiket,
                 'updated_by' => 'Seeder',
                 'created_by' => 'Seeder',
                 'created_at' => now(),
@@ -70,19 +73,22 @@ class DatabaseSeeder extends Seeder
             $id_kategori = Kategori::where("nama_kategori", $item_kategori->kategori)->first()->id;
             $id_subkategori = Subkategori::where("nama_subkategori", $item_kategori->subkategori)->first()->id;
 
-            $list_subkategori = [
+            $list_item_kategori = [
                 'id_kategori' => $id_kategori,
                 'nama_kategori' => $item_kategori->kategori,
                 'id_subkategori' => $id_subkategori,
                 'nama_subkategori' => $item_kategori->subkategori,
                 'nama_item_kategori' => $item_kategori->item_kategori,
+                'level_dampak' => $item_kategori->level_dampak,
+                'level_urgensi' => $item_kategori->level_urgensi,
+                'tipe_tiket' => $item_kategori->tipe_tiket,
                 'updated_by' => 'Seeder',
                 'created_by' => 'Seeder',
                 'created_at' => now(),
                 'updated_at' => now(),
             ];
 
-            ItemCategory::create($list_subkategori);
+            ItemCategory::create($list_item_kategori);
         }
 
         foreach ($daftar_user_role as $user_role) {

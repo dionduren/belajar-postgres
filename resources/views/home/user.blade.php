@@ -50,7 +50,9 @@
                         <tbody>
                             @foreach ($daftar_tiket as $tiket)
                                 <tr>
-                                    <td>TO BE DETERMINED</td>
+                                    <td>
+                                        {{ $tiket->nomor_tiket != null ? $tiket->nomor_tiket : 'Empty' }}
+                                    </td>
                                     <td class="text-center">{{ $tiket->tipe_tiket }}</td>
                                     <td class="text-center">{{ $tiket->kategori_tiket }}</td>
                                     <td>{{ $tiket->subkategori_tiket }}</td>
@@ -64,19 +66,6 @@
                                         @endif
                                     </td>
                                     <td>{{ $tiket->judul_tiket }}</td>
-                                    {{-- @if ($tiket->tipe_matriks == 'LOW')
-                                        <td class="text-light fw-bold text-center" style="background-color: green">
-                                            {{ $tiket->tipe_matriks }}
-                                        </td>
-                                    @elseif ($tiket->tipe_matriks == 'MEDIUM')
-                                        <td class="text-dark fw-bold text-center" style="background-color: yellow">
-                                            {{ $tiket->tipe_matriks }}
-                                        </td>
-                                    @else
-                                        <td class="text-light fw-bold text-center" style="background-color: red">
-                                            {{ $tiket->tipe_matriks }}
-                                        </td>
-                                    @endif --}}
                                     <td class="text-center">
                                         {{ $tiket->status_tiket }}
                                     </td>

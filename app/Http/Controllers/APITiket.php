@@ -8,6 +8,13 @@ use Illuminate\Http\Request;
 
 class APITiket extends Controller
 {
+
+    function created_ticket_list($id)
+    {
+        $list_tiket = Tiket::where('user_id_creator', $id)->get();
+        return response()->json($list_tiket);
+    }
+
     public function helpdesk_list_submitted()
     {
         $list_tiket = Tiket::where('status_tiket', 'Submitted')->get();
