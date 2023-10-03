@@ -39,6 +39,8 @@ Route::get('/helpdesk-tiket-detail/{id}', [APITiket::class, 'helpdesk_detail']);
 Route::get('/technical-group-list', [APIGroup::class, 'technical_group_list']);
 Route::post('/tiket-assign-group', [APIGroup::class, 'tiket_assign_group']);
 
+Route::get('/get-group-id/{id}', [APIGroup::class, 'get_group_id']);
+
 Route::get('/teamlead-tiket-waiting-list/{id}', [APITiket::class, 'teamlead_waiting_list']);
 Route::get('/teamlead-tiket-ongoing-list/{id}', [APITiket::class, 'teamlead_ongoing_list']);
 Route::get('/teamlead-tiket-finished/{id}', [APITiket::class, 'teamlead_finished']);

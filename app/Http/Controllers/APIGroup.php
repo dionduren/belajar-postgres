@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Tiket;
-use App\Models\ActionTime;
 
+use App\Models\ActionTime;
 use App\Models\GrupMember;
 use Illuminate\Http\Request;
 use App\Models\GrupTechnical;
@@ -26,17 +27,25 @@ class APIGroup extends Controller
         return response()->json($list_technical);
     }
 
+    public function get_group_id($id)
+    {
+        $group_id = GrupMember::where('nik_member', $id)->first()->id_group;
+        return response()->json($group_id);
+    }
+
     function tiket_assign_group(Request $request)
     {
         $id_tiket = $request->input('id_tiket');
         $id_group = $request->input('id_group');
-        $nama_group = $request->input('nama_group');
+        $nik =  $request->input('nik');
+        $nama_group = GrupTechnical::where('id', $id_group)->first()->nama_group;
+        $helpdesk_agent = User::where('nik', $nik)->first();
 
         Tiket::where('id', $id_tiket)->update([
             'id_group' => $id_group,
             'assigned_group' => $nama_group,
             'status_tiket' => 'Assigned',
-            'updated_by' => 'Helpdesk',        //Todo: Ganti jadi user Helpdesk
+            'updated_by' => $helpdesk_agent->nama,
         ]);
 
         $info_tiket = Tiket::where('id', $id_tiket)->first();
@@ -53,7 +62,7 @@ class APIGroup extends Controller
             // 'durasi_total' => $durasi_float,
             'durasi_total' => sprintf("%.3f", $durasi_float),
             'durasi' => $durasi,
-            'created_by' => 'HELPDESK',
+            'created_by' => $helpdesk_agent->nama,
         ]);
 
         return response()->json([

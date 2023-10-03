@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\GrupMember;
 use App\Models\KnowledgeManagement;
 use App\Models\Tiket;
 use Illuminate\Http\Request;
