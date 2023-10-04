@@ -40,6 +40,7 @@ Route::get('/technical-group-list', [APIGroup::class, 'technical_group_list']);
 Route::post('/tiket-assign-group', [APIGroup::class, 'tiket_assign_group']);
 
 Route::get('/get-group-id/{id}', [APIGroup::class, 'get_group_id']);
+Route::get('/get-teamlead-status/{id}', [APIGroup::class, 'get_teamlead_status']);
 
 Route::get('/teamlead-tiket-waiting-list/{id}', [APITiket::class, 'teamlead_waiting_list']);
 Route::get('/teamlead-tiket-ongoing-list/{id}', [APITiket::class, 'teamlead_ongoing_list']);
