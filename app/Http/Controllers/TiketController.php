@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TiketController extends Controller
 {
@@ -21,14 +22,14 @@ class TiketController extends Controller
     public function teamlead_detail_tiket($id)
     {
         return view('tiket.teamlead-detail', [
-            "tiket_id" => $id
+            "tiket_id" => $id,
         ]);
     }
 
     public function technical_detail_tiket($id)
     {
         return view('tiket.technical-detail', [
-            "tiket_id" => $id
+            "tiket_id" => $id,
         ]);
     }
 }

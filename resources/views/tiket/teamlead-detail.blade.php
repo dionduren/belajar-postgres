@@ -115,7 +115,6 @@
     <script>
         $(document).ready(function() {
             var id_tiket = {{ $tiket_id }};
-            // alert(id_tiket);
 
             $.ajax({
                 url: "/api/helpdesk-tiket-detail/" + id_tiket,
@@ -181,6 +180,7 @@
                     id_tiket: id_tiket,
                     id_technical: id_technical,
                     nama_technical: nama_technical,
+                    nik: 121003,
                 },
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

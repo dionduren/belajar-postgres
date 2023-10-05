@@ -178,7 +178,7 @@ class DatabaseSeeder extends Seeder
         GrupMember::create([
             'id_group' => 1,
             'nama_group' => 'Infrastruktur & Layanan TI',
-            'nik_member' => 121004,
+            'nik_member' => 'teknisi.network',
             'nama_member' => 'Teknisi Network',
             'role_member' => 'Member',
             'updated_by' => 'Seeder',
@@ -186,7 +186,6 @@ class DatabaseSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-
 
 
         User::create([
