@@ -1,11 +1,12 @@
 <?php
 
-use App\Http\Controllers\APIGroup;
-use App\Http\Controllers\APITiketCreate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\APITiket;
 
+use App\Http\Controllers\APIGroup;
+use App\Http\Controllers\APITiketCreate;
+use App\Http\Controllers\APITiket;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,8 @@ use App\Http\Controllers\APITiket;
 |
 */
 
+Route::post('/login', [AuthController::class, 'login']);
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
@@ -29,11 +32,15 @@ Route::get('/item-kategori-list/{id}', [APITiketCreate::class, 'list_item_katego
 Route::post('/submit-tiket', [APITiketCreate::class, 'store']);
 Route::post('/submit-tiket-mobile', [APITiketCreate::class, 'store_mobile']);
 
+Route::get('/created-tiket-list/{id}', [APITiket::class, 'created_ticket_list']);
 Route::get('/helpdesk-tiket-submitted', [APITiket::class, 'helpdesk_list_submitted']);
 Route::get('/helpdesk-tiket-assigned', [APITiket::class, 'helpdesk_list_assigned']);
 Route::get('/helpdesk-tiket-detail/{id}', [APITiket::class, 'helpdesk_detail']);
 Route::get('/technical-group-list', [APIGroup::class, 'technical_group_list']);
 Route::post('/tiket-assign-group', [APIGroup::class, 'tiket_assign_group']);
+
+Route::get('/get-group-id/{id}', [APIGroup::class, 'get_group_id']);
+Route::get('/get-teamlead-status/{id}', [APIGroup::class, 'get_teamlead_status']);
 
 Route::get('/teamlead-tiket-waiting-list/{id}', [APITiket::class, 'teamlead_waiting_list']);
 Route::get('/teamlead-tiket-ongoing-list/{id}', [APITiket::class, 'teamlead_ongoing_list']);

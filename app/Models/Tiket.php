@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Tiket extends Model
 {
@@ -17,5 +18,10 @@ class Tiket extends Model
     public function parent_tiket()
     {
         return $this->hasOne(Tiket::class, 'id_tiket_prev', 'id');
+    }
+
+    public function user()
+    {
+        return $this->hasOne(User::class, 'id', 'user_id_creator');
     }
 }

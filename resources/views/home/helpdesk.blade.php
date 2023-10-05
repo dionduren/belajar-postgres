@@ -41,7 +41,7 @@
                                 <th class="text-center">Item kategori</th>
                                 <th class="text-center">Judul</th>
                                 <th class="text-center">Tipe Matriks/SLA</th>
-                                <th class="text-center">Status Tiket</th>
+                                <th class="text-center">Pembuat Tiket</th>
                                 <th class="text-center">Action</th>
                             </tr>
                         </thead>
@@ -92,7 +92,7 @@
                 ordering: true,
                 searching: true,
                 columns: [{
-                        data: 'id'
+                        data: 'nomor_tiket'
                     },
                     {
                         data: 'tipe_tiket'
@@ -113,7 +113,7 @@
                         data: 'tipe_matriks'
                     },
                     {
-                        data: 'status_tiket'
+                        data: 'created_by'
                     },
                     {
                         data: null,
