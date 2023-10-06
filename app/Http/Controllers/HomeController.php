@@ -14,6 +14,11 @@ class HomeController extends Controller
         return view('home.homepage');
     }
 
+    public function report()
+    {
+        return view('home.report');
+    }
+
 
     public function home_user()
     {

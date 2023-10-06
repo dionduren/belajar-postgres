@@ -20,6 +20,7 @@ Route::get('/', function () {
 });
 
 Route::get('/', [HomeController::class, 'homepage']);
+Route::get('/report', [HomeController::class, 'report']);
 Route::get('/user', [HomeController::class, 'home_user']);
 
 Route::get('/helpdesk', [HomeController::class, 'home_helpdesk']);
@@ -31,6 +32,5 @@ Route::get('/teamlead/detail/{id}', [TiketController::class, 'teamlead_detail_ti
 
 Route::get('/technical/{id}', [HomeController::class, 'home_technical']);
 Route::get('/technical/detail/{id}', [TiketController::class, 'technical_detail_tiket']);
-
 
 Route::get('/create-tiket', [TiketController::class, 'create_tiket']);
